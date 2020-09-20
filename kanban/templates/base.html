@@ -1,0 +1,29 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block Planner %}Palnner{% endblock %}</title> <!--Все что между игнорирует и не переходить  наш "planner"-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-danger btn-lg" href="/admin/">Admin</a>
+        {% block Boards %}
+        <a class="btn btn-warning" href="/api/v1/boards/">Boards</a>
+        <a class="btn btn-dark" href="api/v1/auth/token/login/">Token</a>
+        {% endblock %}
+        <!--Все что между игнорирует и не переходят эти ссылки в другой шаблон-->
+      </nav>
+
+    </div>
+
+</body>
+
+</head>
+
+</html>

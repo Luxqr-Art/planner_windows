@@ -1,0 +1,5 @@
+[client]
+database = planner
+user = luxqr_planner
+password = 231196Popka
+default-character-set = utf8
