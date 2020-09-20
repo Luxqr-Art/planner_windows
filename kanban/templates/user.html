@@ -1,13 +1,13 @@
 {% extends 'base.html'%}
 {% block Planner %}
-Board
+Column
 {% endblock %}
 
 
 {% block Boards %}
-<a class="btn btn-success" href="{%  url 'get_board' %}">Get Board</a>
+<a class="btn btn-success" href="{%  url 'get_users' %}">Get User Board</a>
     <!--очень важно смотреть на "/" так как это ссылка со с другого html то в начеле
     ставим тем самым обрубаем все что было до и в конце не ставим "/"-->
-<a class="btn btn-success" href="{% url 'create_board' %}">Create Board</a>
-<a class="btn btn-success" href="/api/v1/boards/retrieve_update_delete/">Retrieve Update Delete Board</a> указать id
+<a class="btn btn-success" href="{% url 'get_users' %}">Create User Board</a>
+<a class="btn btn-success" href="/api/v1/users/retrieve_update_delete/">Retrieve Update Delete User Board</a> указать id
 {% endblock %}

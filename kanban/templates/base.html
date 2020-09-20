@@ -15,9 +15,16 @@
         <a class="btn btn-danger btn-lg" href="/admin/">Admin</a>
         {% block Boards %}
         <a class="btn btn-warning" href="/api/v1/boards/">Boards</a>
+            <a class="btn btn-warning" href="/api/v1/columns/">Columns</a>
+            <a class="btn btn-warning" href="/api/v1/cards/">Cards</a>
+            <a class="btn btn-warning" href="/api/v1/users/">Users Boards</a>
+            <a class="btn btn-warning" href="/api/v1/executors/">Executors</a>
+            <a class="btn btn-warning" href="/api/v1/comments/">Comments</a>
         <a class="btn btn-dark" href="api/v1/auth/token/login/">Token</a>
         {% endblock %}
         <!--Все что между игнорирует и не переходят эти ссылки в другой шаблон-->
+        <a class="btn btn-primary btn-lg" href="/">Main</a>
+
       </nav>
 
     </div>

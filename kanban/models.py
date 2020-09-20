@@ -59,7 +59,7 @@ class BoardUser(models.Model):
 
     user_id = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
     board_id = models.ForeignKey(Boards, verbose_name='Board', on_delete=models.CASCADE)
-    is_user = models.BooleanField(verbose_name='Do you owner')
+    is_user = models.BooleanField(verbose_name='Are you owner')
     is_readonly = models.BooleanField(verbose_name='Read only')
 
 
