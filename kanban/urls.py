@@ -22,7 +22,8 @@ urlpatterns = [
     path('columns/retrieve_update_delete/<int:pk>', BoardColumnsRUD.as_view()),
 
     path('cards/get/', BoardCardsList.as_view(), name='get_cards'),
-    path('cards/create/', BoardCardsCreate.as_view(), name='get_cards'),
+    path('cards/create/', BoardCardsCreate.as_view(), name='create_cards'),
+    path('cards/sort/<int:board_id>', CardFilter.as_view()),
     path('cards/retrieve_update_delete/<int:pk>', BoardCardsRUD.as_view()),
 
     path('users/get/', BoardUserList.as_view(), name='get_users'),
@@ -34,7 +35,7 @@ urlpatterns = [
     path('executors/retrieve_update_delete/<int:pk>', BoardUserExecutorsRUD.as_view()),
 
     path('comments/get/', BoardCardCommentsList.as_view(), name='get_comments'),
-    path('comments/create/', BoardCardCommentsCreate.as_view(), name='get_comments'),
+    path('comments/create/', BoardCardCommentsCreate.as_view(), name='create_comments'),
     path('comments/retrieve_update_delete/<int:pk>', BoardUserExecutorsRUD.as_view()),
 
 

@@ -8,6 +8,8 @@ class BoardsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
+
 class BoardColumnsSerializer(serializers.ModelSerializer):
     class Meta:
         model = BoardColumns
@@ -18,12 +20,14 @@ class BoardCardsSerializer(serializers.ModelSerializer):
     class Meta:
         model = BoardCards
         fields = '__all__'
-
-
+    # board_id = serializers.SlugRelatedField(slug_field='title', read_only=True)
+    # board_column = serializers.SlugRelatedField(slug_field='title', read_only=True)
 class BoardUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = BoardUser
         fields = '__all__'
+
+
 
 
 class BoardUserExecutorsSerializer(serializers.ModelSerializer):

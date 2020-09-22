@@ -8,6 +8,7 @@ Card
 <a class="btn btn-success" href="{%  url 'get_cards' %}">Get Card</a>
     <!--очень важно смотреть на "/" так как это ссылка со с другого html то в начеле
     ставим тем самым обрубаем все что было до и в конце не ставим "/"-->
-<a class="btn btn-success" href="{% url 'get_cards' %}">Create Card</a>
-<a class="btn btn-success" href="/api/v1/cards/retrieve_update_delete">Retrieve Update Delete Card</a> указать id
+<a class="btn btn-success" href="{% url 'create_cards' %}">Create Card</a>
+<a class="btn btn-success" href="/api/v1/cards/sort/">Filter Board</a>
+<a class="btn btn-success" href="/api/v1/cards/retrieve_update_delete/">Retrieve Update Delete Card</a> указать id
 {% endblock %}

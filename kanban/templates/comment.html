@@ -8,6 +8,6 @@ Comment
 <a class="btn btn-success" href="{%  url 'get_comments' %}">Get Comment</a>
     <!--очень важно смотреть на "/" так как это ссылка со с другого html то в начеле
     ставим тем самым обрубаем все что было до и в конце не ставим "/"-->
-<a class="btn btn-success" href="{% url 'get_comments' %}">Create Comment</a>
+<a class="btn btn-success" href="{% url 'create_comments' %}">Create Comment</a>
 <a class="btn btn-success" href="/api/v1/comments/retrieve_update_delete/">Retrieve Update Delete Comment</a> указать id
 {% endblock %}
