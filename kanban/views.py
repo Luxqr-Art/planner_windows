@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from rest_framework import generics, filters
+from rest_framework import generics, filters, permissions
 from .serializers import *
 from .models import *
 from django_filters.rest_framework import DjangoFilterBackend
+
+
+
+
 
 def main(request):
     return render(request, 'base.html')
@@ -32,6 +36,7 @@ def comment(request):
 class BoardsList(generics.ListAPIView):
     queryset = Boards.objects.all()
     serializer_class = BoardsSerializer
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filter_backends = [DjangoFilterBackend]
     filterset_fields= ['title']
 
@@ -45,6 +50,8 @@ class BoardCreate(generics.CreateAPIView):
 class BoardRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = Boards.objects.all()
     serializer_class = BoardsSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
 
 
 # конкретно ожидает он нас pk то есть мы сами укажим какой  id  использовать прямо в ссылке
