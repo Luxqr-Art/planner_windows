@@ -15,7 +15,7 @@ class BoardsAdmin(admin.ModelAdmin):
 class BoardColumnsAdmin(admin.ModelAdmin):
     list_display = [
         'id',
-        'board_id',
+        # 'board_id',
         'title',
         'create_time',
         'sort_index',

@@ -9,7 +9,7 @@ User = get_user_model()
 class Boards(models.Model):
     class Meta:
         db_table = 'Boards'
-        verbose_name = 'board_id'
+        verbose_name = 'board'
         verbose_name_plural = 'boards'
 
     title = models.CharField(max_length=20, verbose_name='Board')
@@ -22,8 +22,8 @@ class Boards(models.Model):
 class BoardColumns(models.Model):
     class Meta:
         db_table = 'Board_Column'
-        verbose_name = 'board_id columns'
-        verbose_name_plural = 'board_id column'
+        verbose_name = 'board columns'
+        verbose_name_plural = 'board column'
 
     board_id = models.ForeignKey(Boards, verbose_name='Board', on_delete=models.CASCADE)
     title = models.CharField(max_length=25, verbose_name='Name Column')
@@ -37,8 +37,8 @@ class BoardColumns(models.Model):
 class BoardCards(models.Model):
     class Meta:
         db_table = 'Board_Card'
-        verbose_name = 'board_id cards'
-        verbose_name_plural = 'board_id card'
+        verbose_name = 'board cards'
+        verbose_name_plural = 'board card'
 
     board_id = models.ForeignKey(Boards, verbose_name='Board', on_delete=models.CASCADE)
     board_column = models.ForeignKey('BoardColumns', null=True, verbose_name='Name Column', on_delete=models.CASCADE)
@@ -54,8 +54,8 @@ class BoardCards(models.Model):
 class BoardUser(models.Model):
     class Meta:
         db_table = 'Board_User'
-        verbose_name = 'board_id users'
-        verbose_name_plural = 'board_id user_id'
+        verbose_name = 'board users'
+        verbose_name_plural = 'board user'
 
     user_id = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
     board_id = models.ForeignKey(Boards, verbose_name='Board', on_delete=models.CASCADE)
@@ -66,8 +66,8 @@ class BoardUser(models.Model):
 class BoardUserExecutors(models.Model):
     class Meta:
         db_table = 'Board_user_executors'
-        verbose_name = 'board_id user_id executor'
-        verbose_name_plural = 'board_id user_id executors'
+        verbose_name = 'board user executor'
+        verbose_name_plural = 'board user executors'
 
     user_id = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
     card_id = models.ForeignKey(BoardCards, verbose_name='Tasks', on_delete=models.CASCADE)
@@ -76,8 +76,8 @@ class BoardUserExecutors(models.Model):
 class BoardCardComments(models.Model):
     class Meta:
         db_table = 'Board_card_comments'
-        verbose_name = 'board_id card comment'
-        verbose_name_plural = 'board_id card comments'
+        verbose_name = 'board card comment'
+        verbose_name_plural = 'board card comments'
 
     user_id = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
     card_id = models.ForeignKey(BoardCards, verbose_name='Tasks', on_delete=models.CASCADE)

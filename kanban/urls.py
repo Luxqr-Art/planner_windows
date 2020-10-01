@@ -13,6 +13,7 @@ urlpatterns = [
 
 
     path('boards/get/', BoardsList.as_view(), name='get_board'),
+    path('boards/get/filter/', BoardsListFilter.as_view(), name='get_board_filter'),
     path('boards/create/', BoardCreate.as_view(), name='create_board'),
     path('boards/retrieve_update_delete/<int:pk>', BoardRUD.as_view()),
     # конкретно ожидает он нас pk то есть мы сами укажим какой  id  использовать прямо в ссылке
