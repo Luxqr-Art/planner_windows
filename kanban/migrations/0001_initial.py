@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('create_time', models.DateTimeField(auto_now_add=True)),
             ],
             options={
-                'verbose_name': 'board',
+                'verbose_name': 'board_id',
                 'verbose_name_plural': 'boards',
                 'db_table': 'Boards',
             },

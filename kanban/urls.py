@@ -20,6 +20,7 @@ urlpatterns = [
     path('columns/get/', BoardColumnsList.as_view(), name='get_column'),
     path('columns/create/', BoardColumnsCreate.as_view(), name='create_column'),
     path('columns/retrieve_update_delete/<int:pk>', BoardColumnsRUD.as_view()),
+    path('columns/boards/<int:boards_id>', BoardColumnsFilterList.as_view()),
 
     path('cards/get/', BoardCardsList.as_view(), name='get_cards'),
     path('cards/create/', BoardCardsCreate.as_view(), name='create_cards'),

@@ -36,9 +36,14 @@ def comment(request):
 class BoardsList(generics.ListAPIView):
     queryset = Boards.objects.all()
     serializer_class = BoardsSerializer
-    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields= ['title']
+    permission_classes = [permissions.IsAuthenticated]
+    # filter_backends = [DjangoFilterBackend]
+    # filterset_fields= ['title']
+
+
+    def get_queryset(self):
+        boards = BoardUser.objects.filter(user_id=self.request.user_id).values_list('board_id_id')
+        return Boards.objects.filter(id__in=[boards])
 
 class BoardCreate(generics.CreateAPIView):
     serializer_class = BoardsSerializer
@@ -61,11 +66,21 @@ class BoardColumnsList(generics.ListAPIView):
     queryset = BoardColumns.objects.all()
     serializer_class = BoardColumnsSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields= [
+    filterset_fields = [
         'board_id',
         'title',
         'sort_index',
     ]
+
+
+class BoardColumnsFilterList(generics.ListAPIView):
+    queryset = BoardColumns.objects.all()
+    serializer_class = BoardColumnsSerializer
+
+
+    def get_queryset(self):
+        return BoardColumns.objects.filter(board_id=self.kwargs['boards_id'])
+
 
 class BoardColumnsCreate(generics.CreateAPIView):
     serializer_class = BoardColumnsSerializer

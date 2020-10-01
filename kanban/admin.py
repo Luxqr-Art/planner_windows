@@ -5,6 +5,7 @@ from .models import *
 @admin.register(Boards)
 class BoardsAdmin(admin.ModelAdmin):
     list_display = [
+        'id',
         'title',
         'create_time',
     ]
@@ -13,6 +14,7 @@ class BoardsAdmin(admin.ModelAdmin):
 @admin.register(BoardColumns)
 class BoardColumnsAdmin(admin.ModelAdmin):
     list_display = [
+        'id',
         'board_id',
         'title',
         'create_time',
