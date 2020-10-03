@@ -15,7 +15,7 @@ class BoardsAdmin(admin.ModelAdmin):
 class BoardColumnsAdmin(admin.ModelAdmin):
     list_display = [
         'id',
-        # 'board_id',
+        'board_id',
         'title',
         'create_time',
         'sort_index',
@@ -35,6 +35,7 @@ class BoardCardsAdmin(admin.ModelAdmin):
 @admin.register(BoardUser)
 class BoardUserAdmin(admin.ModelAdmin):
     list_display = [
+        'id',
         'user_id',
         'board_id',
         'is_user',

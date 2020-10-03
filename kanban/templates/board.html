@@ -3,13 +3,14 @@
 Board
 {% endblock %}
 
-
+create_board_connection_user
 {% block Boards %}
 <a class="btn btn-success" href="{%  url 'get_board' %}">Get Board</a>
     <!--очень важно смотреть на "/" так как это ссылка со с другого html то в начеле
     ставим тем самым обрубаем все что было до и в конце не ставим "/"-->
 <a class="btn btn-success" href="{%  url 'get_board_filter' %}">Get Board Filter</a>
 <a class="btn btn-success" href="{% url 'create_board' %}">Create Board</a>
+<li></li><a class="btn btn-success" href="{% url 'create_board_connection_user' %}">Create Board Connection User</a></li>
 
 <a class="btn btn-success" href="/api/v1/boards/retrieve_update_delete/">Retrieve Update Delete Board</a> указать id
 {% endblock %}

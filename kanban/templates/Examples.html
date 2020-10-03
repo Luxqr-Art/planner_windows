@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block Planner %}
+Examples
+{% endblock %}
+
+
+{% block Boards %}
+<a class="btn btn-success" href="{%  url 'Update_board' %}">Update Board</a>
+<a class="btn btn-success" href="{%  url 'one_boards' %}"> One Boards=>7</a>
+<a class="btn btn-success" href="{%  url 'list_boards' %}">List Boards>4</a>
+<a class="btn btn-success" href="{%  url 'delete_boards' %}">Delete Board</a>
+{% endblock %}
